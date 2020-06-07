@@ -1,4 +1,4 @@
-# **CretaceousPark**
+# **cretaceousPark**
 
 #### Author: **_Jessica Hvozdovich_**
 #### June 7, 2020
@@ -13,8 +13,8 @@ _This application serves as an introduction to building an API with C#/.NET Core
 2. To download the project Flavory to your desktop enter the following commands:
 ```
 cd Desktop
-git clone https://github.com/jhvozdovich/candy-store.git
-cd candy-store (or the file name you created for the main Flavory of the download)
+git clone https://github.com/jhvozdovich/cretaceous-park.git
+cd cretaceous-park (or the file name you created for the main Flavory of the download)
 ```
 3. To view the downloaded files, open them in a text editor or IDE of your choice.
 * if you have VSCode for example, when your terminal is within the main project Flavory you can open all of the files with the command:
@@ -60,61 +60,19 @@ dotnet run
 2. Select the SQL + button in the top left of the navigation bar.
 3. Paste the following in the query section to create the database:
 
-<!-- ```
-CREATE DATABASE `jessica_hvozdovich`;
+```
+CREATE DATABASE `cretaceous_park` ;
 
-USE `jessica_hvozdovich`;
+USE `cretaceous_park`;
 
-CREATE TABLE `Treats` (
-  `TreatId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `Animals` (
+  `AnimalId` int(11) NOT NULL AUTO_INCREMENT,
   `Name` longtext,
-  `Price` int(11) NOT NULL,
-  `UserId` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`TreatId`),
-  KEY `IX_Treats_UserId` (`UserId`),
-  CONSTRAINT `FK_Treats_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE RESTRICT
-);
-
-CREATE TABLE `Flavors` (
-  `FlavorId` int(11) NOT NULL AUTO_INCREMENT,
-  `Name` longtext,
-  `UserId` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`FlavorId`),
-  KEY `IX_Flavors_UserId` (`UserId`),
-  CONSTRAINT `FK_Flavors_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE RESTRICT
-);
-
-CREATE TABLE `FlavorTreat` (
-  `FlavorTreatId` int(11) NOT NULL AUTO_INCREMENT,
-  `FlavorId` int(11) NOT NULL,
-  `TreatId` int(11) NOT NULL,
-  PRIMARY KEY (`FlavorTreatId`),
-  KEY `IX_FlavorTreat_FlavorId` (`FlavorId`),
-  KEY `IX_FlavorTreat_TreatId` (`TreatId`),
-  CONSTRAINT `FK_FlavorTreat_Flavors_FlavorId` FOREIGN KEY (`FlavorId`) REFERENCES `flavors` (`FlavorId`) ON DELETE CASCADE,
-  CONSTRAINT `FK_FlavorTreat_Treats_TreatId` FOREIGN KEY (`TreatId`) REFERENCES `treats` (`TreatId`) ON DELETE CASCADE
-);
-
-CREATE TABLE `AspNetUsers` (
-  `Id` varchar(255) NOT NULL,
-  `NormalizedUserName` varchar(256) DEFAULT NULL,
-  `Email` varchar(256) DEFAULT NULL,
-  `NormalizedEmail` varchar(256) DEFAULT NULL,
-  `EmailConfirmed` bit(1) NOT NULL,
-  `PasswordHash` longtext,
-  `SecurityStamp` longtext,
-  `ConcurrencyStamp` longtext,
-  `PhoneNumber` longtext,
-  `PhoneNumberConfirmed` bit(1) NOT NULL,
-  `TwoFactorEnabled` bit(1) NOT NULL,
-  `LockoutEnd` datetime(6) DEFAULT NULL,
-  `LockoutEnabled` bit(1) NOT NULL,
-  `AccessFailedCount` int(11) NOT NULL,
-  `UserName` varchar(256) DEFAULT NULL,
-  PRIMARY KEY (`Id`),
-  UNIQUE KEY `UserNameIndex` (`NormalizedUserName`),
-  KEY `EmailIndex` (`NormalizedEmail`)
-); -->
+  `Species` longtext,
+  `Age` int(11) NOT NULL,
+  `Gender` longtext,
+  PRIMARY KEY (`AnimalId`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 ```
 
@@ -144,6 +102,7 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 | Spec | Input | Output |
 | :------------- | :------------- | :------------- |
 | **** | User Input:"" | Output: “” |
+No front end for specs- database practice only.
 
 
 #### License
